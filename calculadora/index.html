@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="header">
+            <h1 class="title">Calculadora neto e iva</h1>
+        </div>
+
+        <!-- Suma / División -->
+        <form id="sumaForm">
+            <h2 class="section-title">Sacar el neto</h2>
+            <div class="input-group">
+                <label for="suma1" class="label">Primer número</label>
+                <input type="number" id="suma1" class="input-field" placeholder="Ingresa el primer número" step="any">
+            </div>
+            <div class="input-group">
+                <label for="suma2" class="label">Segundo número (50,150,250 o lo que quieras)</label>
+                <input type="number" id="suma2" class="input-field" placeholder="Ingresa el segundo número" step="any">
+            </div>
+            <div id="errorSuma" class="error-message hidden"></div>
+            <div class="button-group">
+                <button type="button" class="btn btn-primary" onclick="calcularSuma()">Calcular</button>
+                <button type="button" class="btn btn-secondary" onclick="limpiarSuma()">Limpiar</button>
+            </div>
+            <div id="resultadoSuma" class="result-container hidden">
+                <p class="operation-text" id="textoSuma"></p>
+                <div class="result-value" id="valorSuma"></div>
+                <p class="result-note">Redondeado a 2 decimales</p>
+            </div>
+        </form>
+
+        <!-- Resta -->
+        <form id="restaForm">
+            <h2 class="section-title">Resta</h2>
+            <div class="input-group">
+                <label for="resta1" class="label">valor sin el neto</label>
+                <input type="number" id="resta1" class="input-field" placeholder="Ingresa el primer número" step="any">
+            </div>
+            <div class="input-group">
+                <label for="resta2" class="label">valor con el Neto</label>
+                <input type="number" id="resta2" class="input-field" placeholder="Ingresa el segundo número" step="any">
+            </div>
+            <div id="errorResta" class="error-message hidden"></div>
+            <div class="button-group">
+                <button type="button" class="btn btn-primary" onclick="calcularResta()">Calcular</button>
+                <button type="button" class="btn btn-secondary" onclick="limpiarResta()">Limpiar</button>
+            </div>
+            <div id="resultadoResta" class="result-container hidden">
+                <p class="operation-text" id="textoResta"></p>
+                <div class="result-value" id="valorResta"></div>
+                <p class="result-note">Este es el valor del iva redondeado a 2 decimales</p>
+            </div>
+        </form>
+    </div>
+
+<script src="js.js"></script>
+</body>
+</html>
